@@ -1,3 +1,4 @@
+document.getElementById("weight").addEventListener("click",weight);
 function check() {
             let weight = parseInt(document.getElementById("weight").value);
             if (isNaN(weight)) {
@@ -6,5 +7,6 @@ function check() {
                 alert("Baggage weight is " + weight + "kg is Allowed.");
             } else {
                 alert("Baggage weight is " + weight + "kg is Overweight!");
+                document.getElementById("result").textContent = "weight"
             }
         }
