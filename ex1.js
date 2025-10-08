@@ -13,7 +13,7 @@ function check() {
 }
 
 // Function to handle overweight baggage
-function handleExcess(weight) {
+function handleExcess() {
     let excess = weight - 50;
     alert("Excess weight: " + excess + "kg. You need to remove some weight.");
 
