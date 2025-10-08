@@ -16,5 +16,5 @@
       }
 
       document.getElementById("result").innerText =
-        `The sum of all multiples of ${num1} or ${num2} below ${limit} is ${sum}.`;
+      `The sum of all multiples of ${num1} or ${num2} below ${limit} is ${sum}.`;
     }
