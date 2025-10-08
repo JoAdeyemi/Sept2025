@@ -15,8 +15,8 @@ function check() {
 // Function to handle overweight baggage
 function handleExcess() {
    const remove = parseFloat(document.getElementById("remove").value);
-  const resultDiv = document.getElementById("result");
-  const excessSection = document.getElementById("excessSection");
+   const resultDiv = document.getElementById("result");
+   const excessSection = document.getElementById("excessSection");
 
   if (isNaN(remove) || remove <= 0) {
     resultDiv.innerHTML = "<span class='warn'>⚠️ Please enter a valid amount to remove!</span>";
