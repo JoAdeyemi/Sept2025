@@ -14,24 +14,25 @@ function check() {
 
 // Function to handle overweight baggage
 function handleExcess() {
-    let excess = weight - 50;
-    alert("Excess weight: " + excess + "kg. You need to remove some weight.");
+   const remove = parseFloat(document.getElementById("remove").value);
+  const resultDiv = document.getElementById("result");
+  const excessSection = document.getElementById("excessSection");
 
-    // Ask user how much weight they want to remove
-    let remove = parseInt(prompt("Enter how many kg you will remove:"));
+  if (isNaN(remove) || remove <= 0) {
+    resultDiv.innerHTML = "<span class='warn'>⚠️ Please enter a valid amount to remove!</span>";
+    return;
+  }
 
-    if (isNaN(remove) || remove <= 0) {
-        alert("Invalid input. Please enter a valid number greater than 0.");
-        return;
-    }
+  const newWeight = currentWeight - remove;
 
-    let newWeight = weight - remove;
-
-    if (newWeight === 50) {
-        alert("OK ✅. Your baggage is now exactly 50kg.");
-    } else if (newWeight > 50) {
-        alert("Still overweight! You need to remove " + (newWeight - 50) + "kg more.");
-    } else {
-        alert("Good ✅. Your baggage is now " + newWeight + "kg, under the limit.");
-    }
+  if (newWeight === 50) {
+    resultDiv.innerHTML = `<span class='ok'>✅ OK! Your baggage is now exactly 50kg.</span>`;
+    excessSection.style.display = "none";
+  } else if (newWeight > 50) {
+    const stillExcess = newWeight - 50;
+    resultDiv.innerHTML = `<span class='warn'>❌ Still overweight! You need to remove ${stillExcess}kg more.</span>`;
+  } else {
+    resultDiv.innerHTML = `<span class='ok'>✅ Good! Your baggage is now ${newWeight}kg, under the limit.</span>`;
+    excessSection.style.display = "none";
+  }
 }
