@@ -33,5 +33,5 @@
         alert("Baggage weight is " + weight + "kg is Overweight!");
     }
     document.getElementById("weight").innerText =
-    `The total weight is {weight}.`;
+    "The total weight is" {weight} + "kg";
 }
