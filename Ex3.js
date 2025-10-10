@@ -19,19 +19,5 @@
       `The sum of all multiples of ${num1} or ${num2} below ${limit} is ${sum}.`;
     }
 
- function check() {
-    let weight = parseInt(document.getElementById("weight").value);
-
-    if (isNaN(weight)) {
-        alert("Please enter a valid number for baggage weight.");
-    } 
-    else if (weight <= 50) {
-        alert("Baggage weight is " + weight + "kg is Allowed.");
-    } 
-    else 
-      {
-        alert("Baggage weight is " + weight + "kg is Overweight!");
-    }
-    document.getElementById("weight").innerText =
-    "The total weight is" {weight} + "kg";
+ 
 }
