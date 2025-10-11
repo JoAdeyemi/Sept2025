@@ -1,7 +1,7 @@
 function checkBaggage() {
   let allowable = 50;
   let weight = parseFloat(document.getElementById("weight").value);
-  let result = document.getElementById("result");
+  let result = document.getElementById("Allowed Weight");
 
   if (isNaN(weight) || weight <= 0) {
     result.textContent = "⚠️ Please enter a valid baggage weight.";
