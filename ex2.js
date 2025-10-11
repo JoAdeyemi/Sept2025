@@ -1,23 +1,18 @@
-// Function to handle overweight baggage
-function handleExcess(weight) {
-    let excess = weight - 50;
-    alert("Excess weight: " + excess + "kg. You need to remove some weight.");
+function checkBaggage() {
+  // Get the weight entered by the user
+  let weight = parseFloat(document.getElementById("weight").value);
+  let result = document.getElementById("result");
 
-    // Ask user how much weight they want to remove
-    let remove = parseInt(prompt("Enter how many kg you will remove:"));
+  // Validate input
+  if (isNaN(weight)) {
+    result.textContent = "⚠️ Please enter a valid number.";
+    return;
+  }
 
-    if (isNaN(remove) || remove <= 0) {
-        alert("Invalid input. Please enter a valid number greater than 0.");
-        return;
-    }
-
-    let newWeight = weight - remove;
-
-    if (newWeight === 50) {
-        alert("OK ✅. Your baggage is now exactly 50kg.");
-    } else if (newWeight > 50) {
-        alert("Still overweight! You need to remove " + (newWeight - 50) + "kg more.");
-    } else {
-        alert("Good ✅. Your baggage is now " + newWeight + "kg, under the limit.");
-    }
+  // Check weight condition
+  if (weight > 50) {
+    result.textContent = "❌ Baggage is overweight!";
+  } else {
+    result.textContent = "✅ Baggage weight is allowed.";
+  }
 }
